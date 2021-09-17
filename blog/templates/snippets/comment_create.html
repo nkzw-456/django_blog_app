@@ -1,0 +1,12 @@
+<form method="POST">
+    {% csrf_token %}
+    <label for="" class="form-label">コメントする</label>
+    <textarea class="form-control" name="text" id="" cols="" rows="5"></textarea>
+    <input name="name" class="form-control mt-3 mb-3" cols="6" placeholder="名前">
+    <button type='submit' class="btn btn-outline-dark">コメントする</button>
+    <div class="mb-5"></div>
+</form>
+<!-- nameの部分をmodels Commentにあわせないと保存できないので注意 -->
+<!-- formsから出力でなくhtmlから情報を受け取って保存するのでPOSTで処理を行うよ -->
+<!-- viewsの方でPOSTがきたらどうするか記述する -->
+    

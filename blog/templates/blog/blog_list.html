@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+{% block contents %}
+
+{% for blog in object_list %}
+<div class="media mb-4">
+    {% if blog.images %}
+    <img src="{{ blog.images.url }}" alt=""　width="64" height="64">
+    {% else %}
+    <svg class="bd-placeholder-img mr-3" width="64" height="64" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: 64x64"><title>Placeholder</title><rect width="100%" height="100%" fill="#868e96"/><text x="50%" y="50%" fill="#dee2e6" dy=".3em">64x64</text></svg>
+    {% endif %}
+    <div class="media-body">
+        <a href="{% url 'detail' blog.pk %}">
+        <h5 class="mt-0 border-bottom">{{ blog.title }} {{ blog.created_at }}</h5>
+        {{ blog.body }}
+        </a>
+    </div>
+</div>
+{% endfor %}
+
+{% if is_paginated %}
+{% include 'snippets/pageobj_pagenator.html' %}
+{% endif %}
+
+
+{% endblock %}

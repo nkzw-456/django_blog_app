@@ -1,0 +1,27 @@
+<div class="card-deck">
+    {% for blog in object_list %}
+    <div class="card">
+        <a href="/detail/{{ blog.id }}/">
+            {% if blog.images %}
+            <img class='card-img-top' src='{{ blog.images.url }}' alt=''>
+            {% else %}
+            <img class='card-img-top' src='media/images/Django_2.1_landing_page.png' alt=''>
+            {% endif %}
+            <div class="card-body">
+                {{ blog.title }} {{ blog.category }}
+            </div>
+            <div class="card-footer">
+                bbbbb
+            </div>
+            
+        </a>
+    </div>
+
+    {% endfor %}
+
+    
+    
+
+    
+
+</div>

@@ -1,0 +1,15 @@
+{% block suvbar %}
+<div class="">
+    <h1>タグ検索</h1>
+    {% for item in category_list %}
+
+    <a class="m-2" href="{% url 'categorydetail' item.name_eng %}">{{ item.name_eng }}
+        <small> ({{ item.post_count }})</small>
+    </a>
+    {% endfor %}
+
+</div>
+
+
+
+{% endblock %}

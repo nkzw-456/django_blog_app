@@ -1,0 +1,8 @@
+{% if blog.images %}
+<img src="{{ blog.images.url }}" alt="">
+{% else %}
+<img src="" alt="">
+{% endif %}
+<p>{{ blog.title }} {{ blog.created_at }}{{ blog.category }}</p>
+<p>{{ blog.body|linebreaksbr }}</p>
+<p>{{ blog.author }}</p>

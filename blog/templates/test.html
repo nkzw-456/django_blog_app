@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+
+
+{% block contents %}
+<h1>テストようだよ</h1>
+
+{% include 'snippets/index_list.html' %}
+
+
+{% endblock %}
+
+{% block suvbar %}
+
+<p>テスト</p>
+{% for item in category_list %}
+
+<p>{{ item.name_eng }}</p>
+<a href="{% url 'categorydetail' item.name_eng %}">{{ item.name }}</a>
+
+{% endfor %}
+
+{% endblock %}

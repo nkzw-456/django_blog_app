@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+{% load widget_tweaks %}
+
+{% block contents %}
+<form method="post">
+    {% csrf_token %}
+    <!-- {{ form.non_field_errors }} -->
+
+    
+    <div>
+        <p>名前：{{ form.name|add_class:'form-control' }}</p>
+        <p>メールアドレス：{{ form.email|add_class:'form-control' }}</p>
+        <p>お問い合わせ内容：{{ form.text|add_class:'form-control' }}</p>
+    </div>
+    
+    
+
+    <!-- {{ field.errors }} -->
+    
+    <button type='submit' class="btn btn-outline-dark">送信</button>
+</form>
+
+
+
+{% endblock %}

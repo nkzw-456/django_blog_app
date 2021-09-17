@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+
+{% block contents %}
+
+<h1>Category一覧</h1>
+
+{% for item in object_list %}
+<div class="list-group">
+    <a class="list-group-item" href="{% url 'categorydetail' item.name_eng %}">{{ item.name }} ({{ item.post_count }})</a>
+</div>
+{% endfor %}
+
+{% endblock %}
